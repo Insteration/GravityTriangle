@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		4AF51DA0227855E70098321A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF51D9F227855E70098321A /* AppDelegate.swift */; };
-		4AF51DA2227855E70098321A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF51DA1227855E70098321A /* ViewController.swift */; };
+		4AF51DA2227855E70098321A /* GravityTriangleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF51DA1227855E70098321A /* GravityTriangleViewController.swift */; };
 		4AF51DA5227855E70098321A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF51DA3227855E70098321A /* Main.storyboard */; };
 		4AF51DA7227855E80098321A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF51DA6227855E80098321A /* Assets.xcassets */; };
 		4AF51DAA227855E80098321A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF51DA8227855E80098321A /* LaunchScreen.storyboard */; };
+		4AF51DB2227856790098321A /* GravityTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF51DB1227856790098321A /* GravityTriangleView.swift */; };
+		4AF51DB4227858240098321A /* GravityTriangleLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF51DB3227858240098321A /* GravityTriangleLineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4AF51D9C227855E70098321A /* GravityTriangle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GravityTriangle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF51D9F227855E70098321A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4AF51DA1227855E70098321A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4AF51DA1227855E70098321A /* GravityTriangleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityTriangleViewController.swift; sourceTree = "<group>"; };
 		4AF51DA4227855E70098321A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4AF51DA6227855E80098321A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AF51DA9227855E80098321A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AF51DAB227855E80098321A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AF51DB1227856790098321A /* GravityTriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityTriangleView.swift; sourceTree = "<group>"; };
+		4AF51DB3227858240098321A /* GravityTriangleLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityTriangleLineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				4AF51D9F227855E70098321A /* AppDelegate.swift */,
-				4AF51DA1227855E70098321A /* ViewController.swift */,
+				4AF51DA1227855E70098321A /* GravityTriangleViewController.swift */,
+				4AF51DB1227856790098321A /* GravityTriangleView.swift */,
+				4AF51DB3227858240098321A /* GravityTriangleLineView.swift */,
 				4AF51DA3227855E70098321A /* Main.storyboard */,
 				4AF51DA6227855E80098321A /* Assets.xcassets */,
 				4AF51DA8227855E80098321A /* LaunchScreen.storyboard */,
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AF51DA2227855E70098321A /* ViewController.swift in Sources */,
+				4AF51DB2227856790098321A /* GravityTriangleView.swift in Sources */,
+				4AF51DA2227855E70098321A /* GravityTriangleViewController.swift in Sources */,
 				4AF51DA0227855E70098321A /* AppDelegate.swift in Sources */,
+				4AF51DB4227858240098321A /* GravityTriangleLineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
