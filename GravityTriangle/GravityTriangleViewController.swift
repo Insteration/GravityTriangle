@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GravityTriangleViewController: UIViewController {
+class GravityTriangleViewController: UIViewController, TriangleProtocol {
     
     
     override func viewDidLoad() {
@@ -25,8 +25,12 @@ class GravityTriangleViewController: UIViewController {
 //        myView.backgroundColor = .lightGray
 //        view.addSubview(myView)
         
-        let triangle = TriangleView(triangleData: TriangleData(x: 100, y: 100, length: 150, width: 5))
-        view.addSubview(triangle)
+//        let triangle = TriangleView(triangleData: TriangleData(x: 100, y: 100, length: 150, width: 5))
+//        view.addSubview(triangle)
+        
+        
+        let myView = buildTriangle(triangleData: TriangleData(x: 100, y: 100, length: 150, width: 5))
+        view.addSubview(myView)
         
     }
     

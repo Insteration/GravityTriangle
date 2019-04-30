@@ -43,15 +43,13 @@ class TriangleView: UIView {
         let height = Int(sqrt(3.0) * Double(self.length) / 3.5)
         
         let line1 = Line(dataLine: DataLine(lineNumber: .sideOne, lineLength: self.length, lineWidth: self.width))
-//        let viewLine1 = UIView(frame: CGRect(x: 0, y: self.length / 2, width: -height, height: height))
-//        viewLine1.addSubview(line1)
         
         let line2 = Line(dataLine: DataLine(lineNumber: .sideTwo, lineLength: self.length, lineWidth: self.width))
         let viewLine2 = UIView(frame: CGRect(x: self.length, y: -height * 2, width: self.length / 2, height: height))
         viewLine2.addSubview(line2)
         
         let line3 = Line(dataLine: DataLine(lineNumber: .sideThree, lineLength: self.length * 2, lineWidth: self.width))
-        let viewLine3 = UIView(frame: CGRect(x: self.x - height - self.width * 2, y: self.length, width: self.length, height: height))
+        let viewLine3 = UIView(frame: CGRect(x: Int(line1.frame.origin.x), y: self.length, width: self.length, height: height))
         viewLine3.addSubview(line3)
 
         
@@ -66,5 +64,36 @@ class TriangleView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+protocol TriangleProtocol {
+    func buildTriangle(triangleData: TriangleData) -> UIView
+}
+
+extension TriangleProtocol {
+    func buildTriangle(triangleData: TriangleData) -> UIView {
+        
+        let mainView = UIView()
+        
+        let height = Int(sqrt(3.0) * Double(triangleData.length) / 3.5)
+
+        
+        let line1 = Line(dataLine: DataLine(lineNumber: .sideOne, lineLength: triangleData.length, lineWidth: triangleData.width))
+        
+        let line2 = Line(dataLine: DataLine(lineNumber: .sideTwo, lineLength: triangleData.length, lineWidth: triangleData.width))
+        let viewLine2 = UIView(frame: CGRect(x: triangleData.length, y: -height * 2, width: triangleData.length / 2, height: height))
+        viewLine2.addSubview(line2)
+        
+        let line3 = Line(dataLine: DataLine(lineNumber: .sideThree, lineLength: triangleData.length * 2, lineWidth: triangleData.width))
+        let viewLine3 = UIView(frame: CGRect(x: Int(line1.frame.origin.x), y: triangleData.length, width: triangleData.length, height: height))
+        viewLine3.addSubview(line3)
+        
+        mainView.addSubview(line1)
+        mainView.addSubview(viewLine2)
+        mainView.addSubview(viewLine3)
+        
+        return mainView
+        
     }
 }
