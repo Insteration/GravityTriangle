@@ -14,15 +14,15 @@ enum LineSide {
 
 struct DataLine {
     var lineNumber: LineSide
-    var lineLength: Int
-    var lineWidth = 2
+    var lineLength: Double
+    var lineWidth = 2.0
     
-    init(lineNumber: LineSide, lineLength: Int) {
+    init(lineNumber: LineSide, lineLength: Double) {
         self.lineNumber = lineNumber
         self.lineLength = lineLength
     }
     
-    init(lineNumber: LineSide, lineLength: Int, lineWidth: Int) {
+    init(lineNumber: LineSide, lineLength: Double, lineWidth: Double) {
         self.lineNumber = lineNumber
         self.lineLength = lineLength
         self.lineWidth = lineWidth
@@ -31,8 +31,8 @@ struct DataLine {
 
 class Line: UIView {
     var lineNumber: LineSide!
-    var lineLength: Int!
-    var lineWidth: Int!
+    var lineLength: Double!
+    var lineWidth: Double!
     
     init(dataLine: DataLine) {
         super.init(frame: CGRect())
@@ -45,16 +45,18 @@ class Line: UIView {
         
         switch self.lineNumber {
         case .sideOne?:
-            for i in 0..<self.lineLength {
-                let pointFrame = CGRect(x: i, y: self.lineLength - i, width: self.lineWidth, height: self.lineWidth)
+            for i in 0..<Int(self.lineLength) {
+                let pointFrame = CGRect(x: Double(i), y: self.lineLength - Double(i), width: self.lineWidth, height: self.lineWidth)
+//                let pointFrame = CGRect(x: i, y: self.lineLength - i, width: self.lineWidth, height: self.lineWidth)
                 let myView = UIView(frame: pointFrame)
                 myView.backgroundColor = .red
                 arrView.append(myView)
             }
         case .sideTwo?:
-            for i in 0..<self.lineLength {
+            for i in 0..<Int(self.lineLength) {
 //                let pointFrame = CGRect(x: self.lineLength + i, y: i, width: self.lineWidth, height: self.lineWidth)
-                let pointFrame = CGRect(x: i, y: self.lineLength + i, width: self.lineWidth, height: self.lineWidth)
+                let pointFrame = CGRect(x: Double(i), y: self.lineLength + Double(i), width: self.lineWidth, height: self.lineWidth)
+//                let pointFrame = CGRect(x: i, y: self.lineLength + i, width: self.lineWidth, height: self.lineWidth)
                 let myView = UIView(frame: pointFrame)
                 myView.backgroundColor = .green
                 arrView.append(myView)

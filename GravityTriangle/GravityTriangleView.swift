@@ -9,18 +9,18 @@
 import UIKit
 
 struct TriangleData {
-    var x: Int
-    var y: Int
-    var length: Int
-    var width = 2
+    var x: Double
+    var y: Double
+    var length: Double
+    var width = 2.0
 
-    init(x: Int, y: Int, length: Int) {
+    init(x: Double, y: Double, length: Double) {
         self.x = x
         self.y = y
         self.length = length
     }
     
-    init(x: Int, y: Int, length: Int, width: Int) {
+    init(x: Double, y: Double, length: Double, width: Double) {
         self.x = x
         self.y = y
         self.length = length
@@ -29,10 +29,10 @@ struct TriangleData {
 }
 
 class TriangleView: UIView {
-    var x: Int!
-    var y: Int!
-    var length: Int!
-    var width: Int!
+    var x: Double!
+    var y: Double!
+    var length: Double!
+    var width: Double!
     
     init(triangleData: TriangleData) {
         self.x = triangleData.x
@@ -40,25 +40,25 @@ class TriangleView: UIView {
         self.length = triangleData.length
         self.width = triangleData.width
         
-        let height = Int(sqrt(3.0) * Double(self.length) / 3.5)
+        let height = sqrt(3.0) * Double(self.length) / 3.5
         
         let line1 = Line(dataLine: DataLine(lineNumber: .sideOne, lineLength: self.length, lineWidth: self.width))
         
         let line2 = Line(dataLine: DataLine(lineNumber: .sideTwo, lineLength: self.length, lineWidth: self.width))
-        let viewLine2 = UIView(frame: CGRect(x: self.length, y: -height * 2, width: self.length / 2, height: height))
+        let viewLine2 = UIView(frame: CGRect(x: self.length, y: -height * 2, width: self.length / 2, height: height + self.width * 2))
         viewLine2.addSubview(line2)
         
         let line3 = Line(dataLine: DataLine(lineNumber: .sideThree, lineLength: self.length * 2, lineWidth: self.width))
-        let viewLine3 = UIView(frame: CGRect(x: Int(line1.frame.origin.x), y: self.length, width: self.length, height: height))
+        let viewLine3 = UIView(frame: CGRect(x: Double(line1.frame.origin.x), y: self.length, width: self.length, height: height + self.width * 2))
+//        let viewLine3 = UIView(frame: CGRect(x: Int(line1.frame.origin.x), y: self.length, width: self.length, height: height))
         viewLine3.addSubview(line3)
-
         
         
         super.init(frame: CGRect(x: self.x, y: self.y, width: self.length * 2, height: height * 2 + self.width * 2))
         self.addSubview(line1)
         self.addSubview(viewLine2)
         self.addSubview(viewLine3)
-        self.backgroundColor = .yellow
+        
         
     }
     
@@ -66,6 +66,16 @@ class TriangleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 protocol TriangleProtocol {
     func buildTriangle(triangleData: TriangleData) -> UIView
@@ -76,7 +86,7 @@ extension TriangleProtocol {
         
         let mainView = UIView()
         
-        let height = Int(sqrt(3.0) * Double(triangleData.length) / 3.5)
+        let height = sqrt(3.0) * Double(triangleData.length) / 4
 
         
         let line1 = Line(dataLine: DataLine(lineNumber: .sideOne, lineLength: triangleData.length, lineWidth: triangleData.width))
@@ -86,7 +96,7 @@ extension TriangleProtocol {
         viewLine2.addSubview(line2)
         
         let line3 = Line(dataLine: DataLine(lineNumber: .sideThree, lineLength: triangleData.length * 2, lineWidth: triangleData.width))
-        let viewLine3 = UIView(frame: CGRect(x: Int(line1.frame.origin.x), y: triangleData.length, width: triangleData.length, height: height))
+        let viewLine3 = UIView(frame: CGRect(x: Double(line1.frame.origin.x), y: triangleData.length, width: triangleData.length, height: height))
         viewLine3.addSubview(line3)
         
         mainView.addSubview(line1)
